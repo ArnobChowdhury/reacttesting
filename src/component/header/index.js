@@ -3,10 +3,10 @@ import './styles.scss';
 import Logo from './../../assets/logo/logo.png';
 
 const Header = props => (
-    <header>
+    <header data-test="headerComponent">
         <div className="wrap">
             <div className="logo">
-                <img src={Logo} alt="Logo" />
+                <img data-test="logoIMG" src={Logo} alt="Logo" />
             </div>
         </div>
     </header>
