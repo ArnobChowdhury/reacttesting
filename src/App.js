@@ -8,6 +8,8 @@ import { fetchPosts } from './actions';
 
 import './app.scss';
 
+// const MyContext = React.createContext();
+
 const tempArr = [{
   fName: 'Joe',
   lName: 'Bloggs',
@@ -36,26 +38,26 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Header />
-        <section className="main">
-          <Headline header='Posts' desc="Click the button to render posts" tempArr={tempArr} />
-          <SharedButton {...configButton} />
-          {posts.length > 0 &&
-            <div>
-              {posts.map((post, index) => {
-                const { title, body } = post;
-                const configListItem = {
-                  title, desc: body
-                };
-                return (
-                  <ListItem key={index} {...configListItem} />
-                )
-              })}
-            </div>
-          }
-        </section>
-      </div>
+        <div className="App" data-test="appComponent">
+          <Header />
+          <section className="main">
+            <Headline header='Posts' desc="Click the button to render posts" tempArr={tempArr} />
+            <SharedButton {...configButton}  />
+            {posts.length > 0 &&
+              <div>
+                {posts.map((post, index) => {
+                  const { title, body } = post;
+                  const configListItem = {
+                    title, desc: body
+                  };
+                  return (
+                    <ListItem key={index} {...configListItem} />
+                  )
+                })}
+              </div>
+            }
+          </section>
+        </div>
     );
   }
 }
